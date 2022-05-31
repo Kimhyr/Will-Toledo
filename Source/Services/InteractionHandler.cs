@@ -1,7 +1,6 @@
 using System;
 using System.Reflection;
 using System.Threading.Tasks;
-
 using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
@@ -31,7 +30,7 @@ namespace PenileNET.Services {
             _commands.ContextCommandExecuted += ContextCommandExecuted;
             _commands.ComponentCommandExecuted += ComponentCommandExecuted;
         }
-        
+
         private async Task HandleInteraction(SocketInteraction arg) {
             try {
                 var context = new SocketInteractionContext(_client, arg);
@@ -42,7 +41,7 @@ namespace PenileNET.Services {
 
                 if (arg.Type == InteractionType.ApplicationCommand) {
                     await arg.GetOriginalResponseAsync()
-                        .ContinueWith(async msg => 
+                        .ContinueWith(async msg =>
                             await msg.Result.DeleteAsync());
                 }
             }

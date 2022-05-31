@@ -1,14 +1,11 @@
 ﻿using System;
 using System.Threading;
 using System.Threading.Tasks;
-
 using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
-
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-
 using PenileNET.Services;
 
 namespace PenileNET {
@@ -36,7 +33,7 @@ namespace PenileNET {
                 .AddSingleton(_config)
                 .AddSingleton(x =>
                     new DiscordSocketClient(
-                        new DiscordSocketConfig() {
+                        new DiscordSocketConfig {
                             GatewayIntents = GatewayIntents.All,
                             LogGatewayIntentWarnings = false,
                             AlwaysDownloadUsers = true,
