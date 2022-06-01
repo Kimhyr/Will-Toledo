@@ -11,7 +11,7 @@ namespace PenileNET.Modules {
         }
 
         public InteractionService Commands { get; set; }
-        
+
         // TODO: mail, logging, and automod
     }
 }

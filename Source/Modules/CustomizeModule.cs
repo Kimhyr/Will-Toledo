@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Discord.Interactions;
+﻿using Discord.Interactions;
 using PenileNET.Services;
 
 namespace PenileNET.Modules {
@@ -12,7 +11,7 @@ namespace PenileNET.Modules {
         }
 
         public InteractionService Commands { get; set; }
-        
+
         // TODO: embeds, reactions, and events
     }
 }
