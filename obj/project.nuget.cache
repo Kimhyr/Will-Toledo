@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "3MbNOl9xHaKyknP6w+9A1WlTRSTo6UrvSeZezlIrY7IgEi8FiaEfChbBLFUJUsD8E9szxpH4tH7cwPI/tQHsyQ==",
+  "dgSpecHash": "IkdjwJqglY9fmN7PpXziYVUztvnSyvoeW5qZcYIGkYCX3g0Bjm+RO2qtEVaU7uzMXEq31e0vQOy7UzdXJxZJbA==",
   "success": true,
   "projectFilePath": "D:\\Projects\\Personal\\PenileNET\\PenileNET.csproj",
   "expectedPackageFiles": [
@@ -11,6 +11,7 @@
     "C:\\Users\\kinge\\.nuget\\packages\\discord.net.rest\\3.7.1\\discord.net.rest.3.7.1.nupkg.sha512",
     "C:\\Users\\kinge\\.nuget\\packages\\discord.net.webhook\\3.7.1\\discord.net.webhook.3.7.1.nupkg.sha512",
     "C:\\Users\\kinge\\.nuget\\packages\\discord.net.websocket\\3.7.1\\discord.net.websocket.3.7.1.nupkg.sha512",
+    "C:\\Users\\kinge\\.nuget\\packages\\htmlagilitypack\\1.11.43\\htmlagilitypack.1.11.43.nupkg.sha512",
     "C:\\Users\\kinge\\.nuget\\packages\\microsoft.extensions.configuration\\6.0.2-mauipre.1.22102.15\\microsoft.extensions.configuration.6.0.2-mauipre.1.22102.15.nupkg.sha512",
     "C:\\Users\\kinge\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\6.0.2-mauipre.1.22102.15\\microsoft.extensions.configuration.abstractions.6.0.2-mauipre.1.22102.15.nupkg.sha512",
     "C:\\Users\\kinge\\.nuget\\packages\\microsoft.extensions.configuration.fileextensions\\6.0.2-mauipre.1.22102.15\\microsoft.extensions.configuration.fileextensions.6.0.2-mauipre.1.22102.15.nupkg.sha512",

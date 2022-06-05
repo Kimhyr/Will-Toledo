@@ -18,7 +18,7 @@ namespace PenileNET.Modules {
         [SlashCommand("ping", "Responds with 'Ping!'.")]
         public async Task Ping() {
             var embed = new EmbedBuilder {
-                Color = MyColor.Blurple,
+                Color = Colors.Blurple,
                 Title = "Pong!"
             };
 

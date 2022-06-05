@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e1115cd5-cf96-4cb3-a643-b03356e071d4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.PenileNET.dir/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.PenileNET.dir/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.PenileNET.dir/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modules/UserModule/UserModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modules/UserModule/UserUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modules/WebModule/WebModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modules/WebModule/WebUtility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PenileNET.dir/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/PenileNET.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/PenileNET.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Modules/CustomizeModule.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Modules/ModerationModule.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Modules/TestingModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Modules/TestingModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Modules/UserModule.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Utilities/Constants/Color.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Utilities/Constants/Colors.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Utilities/Constants/Symbol.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Utilities/Constants/Symbols.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Utilities/Utility.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/PenileNET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/PenileNET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/PenileNET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/PenileNET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/PenileNET.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/PenileNET.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Source/Services/InteractionHandler.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5956701C-92EC-47BC-9814-5555CD08EAFC/482/List.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Utilities/Constants/Colors.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Modules/TestingModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Modules/UserModule/UserModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Modules/UserModule/UserUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Utilities/Constants/Symbols.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Modules/WebModule/WebUtility.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Modules/WebModule/WebModule.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Source/Modules/WebModule/WebModule.cs" />
+        <option value="$PROJECT_DIR$/Source/Modules/WebModule/WebUtility.cs" />
+        <option value="$PROJECT_DIR$/Source/Modules/UserModule/UserUtility.cs" />
+        <option value="$PROJECT_DIR$/Source/Modules/UserModule/UserModule.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="2A1rRHMpweGnvN18abPezxENRNF" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunManager">
+    <configuration name="PenileNET" type="DotNetProject" factoryName=".NET Project">
+      <option name="EXE_PATH" value="" />
+      <option name="PROGRAM_PARAMETERS" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <option name="USE_MONO" value="0" />
+      <option name="RUNTIME_ARGUMENTS" value="" />
+      <option name="PROJECT_PATH" value="$PROJECT_DIR$/PenileNET.csproj" />
+      <option name="PROJECT_EXE_PATH_TRACKING" value="1" />
+      <option name="PROJECT_ARGUMENTS_TRACKING" value="1" />
+      <option name="PROJECT_WORKING_DIRECTORY_TRACKING" value="1" />
+      <option name="PROJECT_KIND" value="DotNetCore" />
+      <option name="PROJECT_TFM" value="" />
+      <method v="2">
+        <option name="Build" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e1115cd5-cf96-4cb3-a643-b03356e071d4" name="Default Changelist" comment="" />
+      <created>1654187924403</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1654187924403</updated>
+      <workItem from="1654187968798" duration="3972000" />
+      <workItem from="1654219855586" duration="1246000" />
+      <workItem from="1654271045097" duration="42000" />
+      <workItem from="1654282623132" duration="2898000" />
+      <workItem from="1654391646466" duration="136000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1654286521214">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="623" y="235" width="672" height="678" key="search.everywhere.popup/0.0.1920.1080@0.0.1920.1080" timestamp="1654286521214" />
+  </component>
+</project>

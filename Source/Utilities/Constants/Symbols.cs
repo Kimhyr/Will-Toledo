@@ -1,5 +1,5 @@
 ﻿namespace PenileNET.Utilities.Constants {
-    public struct Symbol {
+    public struct Symbols {
         public static readonly string RightArrow = "→";
         public static readonly string LeftArrow = "←";
         public static readonly string UpArrow = "↑";

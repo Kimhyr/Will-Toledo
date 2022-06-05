@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\kinge\AppData\Local\JetBrains\Rider2020.1\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\kinge\AppData\Local\JetBrains\Rider2020.1\resharper-host\Local\Transient\ReSharperHost\v201\SolutionCaches\_.19.00" t="ExcludeRecursive" />
+    <e p="D:\Projects\Personal\PenileNET" t="IncludeRecursive">
+      <e p=".gitignore" t="Include" />
+      <e p="bin" t="ExcludeRecursive" />
+      <e p="obj" t="ExcludeRecursive">
+        <e p="Debug" t="Include">
+          <e p="net6.0" t="Include">
+            <e p="PenileNET.AssemblyInfo.cs" t="Include" />
+            <e p="PenileNET.GlobalUsings.g.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="packages" t="ExcludeRecursive" />
+      <e p="PenileNET.csproj" t="IncludeRecursive" />
+      <e p="README.md" t="Include" />
+      <e p="Source" t="Include">
+        <e p="config.json" t="Include" />
+        <e p="Modules" t="Include">
+          <e p="TestingModule.cs" t="Include" />
+          <e p="UserModule" t="Include">
+            <e p="UserModule.cs" t="Include" />
+            <e p="UserUtility.cs" t="Include" />
+          </e>
+          <e p="WebModule" t="Include">
+            <e p="WebModule.cs" t="Include" />
+            <e p="WebUtility.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Services" t="Include">
+          <e p="InteractionHandler.cs" t="Include" />
+        </e>
+        <e p="Utilities" t="Include">
+          <e p="Constants" t="Include">
+            <e p="Colors.cs" t="Include" />
+            <e p="Symbols.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+    </e>
+  </component>
+</project>

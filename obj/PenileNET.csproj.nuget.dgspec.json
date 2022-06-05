@@ -46,6 +46,10 @@
               "target": "Package",
               "version": "[3.7.1, )"
             },
+            "HtmlAgilityPack": {
+              "target": "Package",
+              "version": "[1.11.43, )"
+            },
             "Microsoft.Extensions.Configuration": {
               "target": "Package",
               "version": "[6.0.2-mauipre.1.22102.15, )"
