@@ -1,15 +1,12 @@
-using System.Linq;
-using System.Threading.Tasks;
 using Discord;
 using Discord.Interactions;
 using PenileNET.Services;
-using PenileNET.Utilities;
 using PenileNET.Utilities.Constants;
 
 namespace PenileNET.Modules {
     [Group("user", "Commands for getting and manipulating users.")]
     public class UserModule : InteractionModuleBase<SocketInteractionContext> {
-        public InteractionService Commands { get; set; }
+        public InteractionService? Commands { get; set; }
         private InteractionHandler _handler;
 
         public UserModule(InteractionHandler handler) {
@@ -18,28 +15,34 @@ namespace PenileNET.Modules {
 
         [SlashCommand("profile", "Displays the user's profile.")]
         public async Task Profile(
-            IGuildUser user = null,
-            [Choice("user", 0)] [Choice("guild", 1)]
+            IGuildUser? user = null,
+            [Choice("user", 0)] [Choice("guild", 1)] [Choice("all", 2)]
             int? option = null
         ) {
-            user = UserUtility.GetUser(user, Context);
+            user = UUser.GetUser(user, Context);
             
             switch (option) {
             case 0:
                 await RespondAsync(
-                    embed: UserUtility.UserProfileEmbed(user).Build()
+                    embed: UUser.UserProfileEmbed(user).Build()
                 );
 
                 break;
             case 1:
                 await RespondAsync(
-                    embed: UserUtility.GuildProfileEmbed(user).Build()
+                    embed: UUser.GuildProfileEmbed(user).Build()
+                );
+
+                break;
+            case 2:
+                await RespondAsync(
+                    embed: UUser.AllProfileEmbed(user).Build()
                 );
 
                 break;
             default:
                 await RespondAsync(
-                    embed: UserUtility.ProfileEmbed(user).Build()
+                    embed: UUser.ProfileEmbed(user).Build()
                 );
 
                 break;
@@ -48,16 +51,16 @@ namespace PenileNET.Modules {
 
 
         [SlashCommand("roles", "Display or modify the user's roles.")]
-        public async Task Roles(IGuildUser user = null, IRole role = null) {
-            user = UserUtility.GetUser(user, Context);
-            var roles = UserUtility.GetRoles(user);
-            var embed = UserUtility.ProfileEmbed(user);
+        public async Task Roles(IGuildUser? user = null, IRole? role = null) {
+            user = UUser.GetUser(user, Context);
+            var roles = UUser.GetRoles(user);
+            var embed = UUser.ProfileEmbed(user);
 
             if (role == null) {
                 embed.AddField(
                     new EmbedFieldBuilder {
                         Name = $"Roles ({roles.Count})",
-                        Value = UserUtility.FormatRoles(roles)
+                        Value = UUser.FormatRoles(roles)
                     }
                 );
             } else {
@@ -116,9 +119,9 @@ namespace PenileNET.Modules {
         }
 
         [SlashCommand("nick", "Display or set the user's nickname.")]
-        public async Task Nick(IGuildUser user = null, string nickname = null) {
-            user = UserUtility.GetUser(user, Context);
-            var embed = UserUtility.ProfileEmbed(user);
+        public async Task Nick(IGuildUser? user = null, string? nickname = null) {
+            user = UUser.GetUser(user, Context);
+            var embed = UUser.ProfileEmbed(user);
 
             if (nickname == null) {
                 var field = new EmbedFieldBuilder {
@@ -167,9 +170,9 @@ namespace PenileNET.Modules {
         }
 
         [SlashCommand("mute", "If the user is muted, un-mute. Otherwise, mute.")]
-        public async Task Mute(IGuildUser user = null) {
-            user = UserUtility.GetUser(user, Context);
-            var embed = UserUtility.ProfileEmbed(user);
+        public async Task Mute(IGuildUser? user = null) {
+            user = UUser.GetUser(user, Context);
+            var embed = UUser.ProfileEmbed(user);
 
             if (user.IsMuted) {
                 try {
@@ -229,9 +232,9 @@ namespace PenileNET.Modules {
         }
 
         [SlashCommand("deafen", "If the user is deafened, un-deafen. Otherwise, deafen.")]
-        public async Task Deafen(IGuildUser user = null) {
-            user = UserUtility.GetUser(user, Context);
-            var embed = UserUtility.ProfileEmbed(user);
+        public async Task Deafen(IGuildUser? user = null) {
+            user = UUser.GetUser(user, Context);
+            var embed = UUser.ProfileEmbed(user);
 
             if (user.IsDeafened) {
                 try {
@@ -293,7 +296,7 @@ namespace PenileNET.Modules {
         [DefaultMemberPermissions(GuildPermission.KickMembers)]
         [SlashCommand("kick", "Kicks the user.")]
         public async Task KicK(IGuildUser user, string reason = "There is no reason.") {
-            user = UserUtility.GetUser(user, Context);
+            user = UUser.GetUser(user, Context);
             
             try {
                 await user.KickAsync(reason);
@@ -310,7 +313,7 @@ namespace PenileNET.Modules {
             }
 
             await RespondAsync(
-                embed: UserUtility.ProfileEmbed(user)
+                embed: UUser.ProfileEmbed(user)
                     .AddField(
                         new EmbedFieldBuilder {
                             IsInline = true,
@@ -328,7 +331,7 @@ namespace PenileNET.Modules {
             [MinValue(0)] [MaxValue(7)] int days = 0,
             string reason = "There is no reason."
         ) {
-            user = UserUtility.GetUser(user, Context);
+            user = UUser.GetUser(user, Context);
             
             try {
                 await user.BanAsync(days, reason);
@@ -345,7 +348,7 @@ namespace PenileNET.Modules {
             }
 
             await RespondAsync(
-                embed: UserUtility.ProfileEmbed(user)
+                embed: UUser.ProfileEmbed(user)
                     .AddField(
                         new EmbedFieldBuilder {
                             IsInline = true,

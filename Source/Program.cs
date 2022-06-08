@@ -12,9 +12,8 @@ namespace PenileNET {
     public class Program {
         private readonly IConfiguration _config;
         private readonly ulong _testGuildId;
-
-        private DiscordSocketClient _client;
-        private InteractionService _interactions;
+        private DiscordSocketClient? _client;
+        private InteractionService? _interactions;
 
         private Program() {
             _config = new ConfigurationBuilder()
@@ -69,17 +68,21 @@ namespace PenileNET {
         }
 
         private async Task ReadyAsync() {
-            if (IsDebug()) {
-                Console.WriteLine($"[DEBUG] Registering commands to '{_testGuildId}'...");
+            if (_interactions != null) {    
+                if (IsDebug()) {
+                    Console.WriteLine($"[DEBUG] Registering commands to '{_testGuildId}'...");
 
-                await _interactions.RegisterCommandsToGuildAsync(_testGuildId);
-            } else {
-                Console.WriteLine("Registering commands globally...");
+                    await _interactions.RegisterCommandsToGuildAsync(_testGuildId);
+                } else {
+                    Console.WriteLine("Registering commands globally...");
 
-                await _interactions.RegisterCommandsGloballyAsync();
+                    await _interactions.RegisterCommandsGloballyAsync();
+                }
             }
 
-            Console.WriteLine($"Connected as '{_client.CurrentUser}'.");
+            if (_client != null) {
+                Console.WriteLine($"Connected as '{_client.CurrentUser}'.");
+            }
         }
 
         private static bool IsDebug() {

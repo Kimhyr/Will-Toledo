@@ -1,13 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using Discord;
+﻿using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
 using PenileNET.Utilities.Constants;
 
 namespace PenileNET.Modules {
-    public class UserUtility {
-        public static IGuildUser GetUser(IGuildUser user, SocketInteractionContext context) {
+    public class UUser {
+        public static IGuildUser GetUser(IGuildUser? user, SocketInteractionContext context) {
             if (user == null) {
                 return context.Guild.GetUser(context.User.Id);
             } else {
@@ -18,12 +16,15 @@ namespace PenileNET.Modules {
         public static EmbedBuilder ProfileEmbed(IGuildUser user) {
             var embed = new EmbedBuilder {
                 Color = Colors.Blurple,
-                Author = new EmbedAuthorBuilder {
-                    Name = FormatProperty(user, user.PublicFlags.Value)
-                },
                 Title = GetGuildTag(user),
                 ThumbnailUrl = user.GetDisplayAvatarUrl()
             };
+
+            if (user.PublicFlags != null) {
+                embed.Author = new EmbedAuthorBuilder {
+                    Name = FormatFlag(user, user.PublicFlags.Value)
+                };
+            }
 
             if (user.Activities.Count > 0) {
                 embed.Description = FormatActivity(GetActivities(user).First());
@@ -44,9 +45,6 @@ namespace PenileNET.Modules {
         public static EmbedBuilder UserProfileEmbed(IGuildUser user) {
             var embed = new EmbedBuilder {
                 Color = GetStatusColor(user),
-                Author = new EmbedAuthorBuilder {
-                    Name = FormatProperty(user, user.PublicFlags.Value)
-                },
                 Title = GetTag(user),
                 ThumbnailUrl = user.GetAvatarUrl(),
                 Fields = {
@@ -56,6 +54,12 @@ namespace PenileNET.Modules {
                     }
                 }
             };
+
+            if (user.PublicFlags != null) {
+                embed.Author = new EmbedAuthorBuilder {
+                    Name = FormatFlag(user, user.PublicFlags.Value)
+                };
+            } 
 
             if (user.Activities.Count > 0) {
                 embed.Description = FormatActivity(GetActivities(user).First());
@@ -71,13 +75,7 @@ namespace PenileNET.Modules {
                     Name = GetTopRole(user).Name
                 },
                 Title = GetGuildTag(user),
-                ThumbnailUrl = user.GetDisplayAvatarUrl(),
-                Fields = {
-                    new EmbedFieldBuilder {
-                        Name = "Joined At",
-                        Value = $"`{user.JoinedAt.Value.ToString("MMM dd, yyyy")}`"
-                    }
-                }
+                ThumbnailUrl = user.GetDisplayAvatarUrl()
             };
 
             if (user.Activities.Count > 0) {
@@ -93,14 +91,98 @@ namespace PenileNET.Modules {
                 );
             }
 
+            if (user.JoinedAt != null) {
+                embed.AddField(
+                    new EmbedFieldBuilder {
+                        Name = "Joined At",
+                        Value = $"`{user.JoinedAt.Value.ToString("MMM dd, yyyy")}`"
+                    }
+                );
+            }
+
+            return embed;
+        }
+
+        
+        public static EmbedBuilder AllProfileEmbed(IGuildUser user) {
+            var embed= new EmbedBuilder() {
+                Color = GetStatusColor(user),
+                Author = new EmbedAuthorBuilder {
+                    Name = user.Id.ToString()
+                },
+                Title = GetTag(user),
+                ThumbnailUrl = user.GetDisplayAvatarUrl(),
+                Description = FormatActivity(GetActivities(user).First()),
+                Fields = {
+                    new EmbedFieldBuilder() {
+                        IsInline = true,
+                        Name = "Created At",
+                        Value = $"`{user.CreatedAt.ToString("MMM dd, yyyy")}`"
+                    }
+                }
+            };
+
+            if (user.JoinedAt != null) {
+                embed.AddField(
+                    new EmbedFieldBuilder() {
+                        IsInline = true,
+                        Name = "Joined at",
+                        Value = $"`{user.JoinedAt.Value.ToString("MMM dd, yyyy")}`"
+                    }
+                );
+            }
+
+            if (user.PublicFlags != null) {
+                embed.AddField(
+                    new EmbedFieldBuilder {
+                        IsInline = true,
+                        Name = "Public Flag",
+                        Value = $"`{FormatFlag(user, user.PublicFlags.Value)}`"
+                    }
+                );
+            }
+
+            var roles = GetRoles(user);
+            if (roles.Count > 0) {
+                embed.AddField(
+                    new EmbedFieldBuilder() {
+                        IsInline = true,
+                        Name = $"Roles [{roles.Count}]",
+                        Value = FormatRoles(roles)
+                    }
+                );
+            }
+
+            if (user.VoiceChannel != null) {
+                embed.AddField(
+                    new EmbedFieldBuilder() {
+                        IsInline = true,
+                        Name = "Voice Channel",
+                        Value = FormatVoiceChannel(user)
+                    }
+                );
+            }
+
             return embed;
         }
 
         public static string FormatVoiceChannel(IGuildUser user) {
-            return $"{user.VoiceChannel.Mention}\n" +
-                $"Limit `{user.VoiceChannel.UserLimit}`\n" +
-                $"Bitrate `{user.VoiceChannel.Bitrate}`\n" +
-                $"Region `{user.VoiceChannel.RTCRegion}`";
+            var channel = user.VoiceChannel;
+
+            var limit = channel.UserLimit.ToString();
+            if (channel.UserLimit == null) {
+                limit = "No limit";
+            }
+
+            var region = channel.RTCRegion;
+            if (string.IsNullOrWhiteSpace(region)) {
+                region = "No region";
+            }
+
+            return $"{user.VoiceChannel.Mention}\n"
+                + $"**Limit** `{limit}`\n"
+                + $"**Bitrate** `{user.VoiceChannel.Bitrate}`\n"
+                + $"**Region** `{region}`";
         }
 
         public static Color GetStatusColor(IGuildUser user) {
@@ -113,7 +195,7 @@ namespace PenileNET.Modules {
             }
         }
 
-        public static string FormatProperty(IGuildUser user, UserProperties properties) {
+        public static string FormatFlag(IGuildUser user, UserProperties properties) {
             switch (user.PublicFlags) {
             case UserProperties.Staff: return "Staff";
             case UserProperties.System: return "System";
@@ -135,7 +217,6 @@ namespace PenileNET.Modules {
 
         public static List<SocketRole> GetRoles(IGuildUser user) {
             var roles = new List<SocketRole>();
-
             foreach (var role in ((SocketGuildUser) user).Roles) {
                 if (!role.IsEveryone) {
                     roles.Add(role);
@@ -150,7 +231,6 @@ namespace PenileNET.Modules {
 
         public static string FormatRoles(List<SocketRole> roles) {
             var str = "";
-
             foreach (var role in roles) {
                 if (!role.IsEveryone) {
                     str += $"{role.Mention} ";
@@ -162,7 +242,6 @@ namespace PenileNET.Modules {
 
         public static SocketRole GetTopRole(IGuildUser user) {
             var posList = new Dictionary<int, SocketRole>();
-
             foreach (var role in ((SocketGuildUser) user).Roles) {
                 posList.Add(role.Position, role);
             }
@@ -180,7 +259,6 @@ namespace PenileNET.Modules {
 
         public static List<IActivity> GetActivities(IGuildUser user) {
             var activities = new List<IActivity>();
-
             foreach (var activity in user.Activities) {
                 activities.Add(activity);
             }
@@ -194,7 +272,6 @@ namespace PenileNET.Modules {
             }
 
             var str = ">>> ";
-
             switch (activity.Type) {
             case ActivityType.Competing:
                 str += "Competing in ";
@@ -219,7 +296,6 @@ namespace PenileNET.Modules {
             }
 
             str += $"**{activity.Name}**";
-
             if (!string.IsNullOrWhiteSpace(activity.Details)) {
                 str += $"\n{activity.Details}";
             }

@@ -8,7 +8,11 @@
     ".NETCoreApp,Version=v6.0": {
       "PenileNET/1.0.0": {
         "dependencies": {
-          "System.Reactive.Reference": "5.0.0.0"
+          "Discord.Net": "3.7.1",
+          "HtmlAgilityPack": "1.11.43",
+          "Microsoft.Extensions.Configuration": "6.0.2-mauipre.1.22102.15",
+          "Microsoft.Extensions.Configuration.Json": "6.0.2-mauipre.1.22102.15",
+          "Microsoft.Extensions.DependencyInjection": "6.0.2-mauipre.1.22102.15"
         },
         "runtime": {
           "PenileNET.dll": {}
@@ -29,7 +33,7 @@
           "Discord.Net.Core": "3.7.1"
         },
         "runtime": {
-          "lib/netstandard2.1/Discord.Net.Commands.dll": {
+          "lib/net6.0/Discord.Net.Commands.dll": {
             "assemblyVersion": "3.7.1.0",
             "fileVersion": "3.7.1.0"
           }
@@ -43,7 +47,7 @@
           "System.ValueTuple": "4.5.0"
         },
         "runtime": {
-          "lib/netstandard2.1/Discord.Net.Core.dll": {
+          "lib/net6.0/Discord.Net.Core.dll": {
             "assemblyVersion": "3.7.1.0",
             "fileVersion": "3.7.1.0"
           }
@@ -59,7 +63,7 @@
           "System.Reactive": "5.0.0"
         },
         "runtime": {
-          "lib/netstandard2.1/Discord.Net.Interactions.dll": {
+          "lib/net6.0/Discord.Net.Interactions.dll": {
             "assemblyVersion": "3.7.1.0",
             "fileVersion": "3.7.1.0"
           }
@@ -70,7 +74,7 @@
           "Discord.Net.Core": "3.7.1"
         },
         "runtime": {
-          "lib/netstandard2.1/Discord.Net.Rest.dll": {
+          "lib/net6.0/Discord.Net.Rest.dll": {
             "assemblyVersion": "3.7.1.0",
             "fileVersion": "3.7.1.0"
           }
@@ -82,7 +86,7 @@
           "Discord.Net.Rest": "3.7.1"
         },
         "runtime": {
-          "lib/netstandard2.1/Discord.Net.Webhook.dll": {
+          "lib/net6.0/Discord.Net.Webhook.dll": {
             "assemblyVersion": "3.7.1.0",
             "fileVersion": "3.7.1.0"
           }
@@ -94,9 +98,17 @@
           "Discord.Net.Rest": "3.7.1"
         },
         "runtime": {
-          "lib/netstandard2.1/Discord.Net.WebSocket.dll": {
+          "lib/net6.0/Discord.Net.WebSocket.dll": {
             "assemblyVersion": "3.7.1.0",
             "fileVersion": "3.7.1.0"
+          }
+        }
+      },
+      "HtmlAgilityPack/1.11.43": {
+        "runtime": {
+          "lib/netstandard2.0/HtmlAgilityPack.dll": {
+            "assemblyVersion": "1.11.43.0",
+            "fileVersion": "1.11.43.0"
           }
         }
       },
@@ -159,7 +171,7 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.2-mauipre.1.22102.15"
         },
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.dll": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.10215"
           }
@@ -167,7 +179,7 @@
       },
       "Microsoft.Extensions.DependencyInjection.Abstractions/6.0.2-mauipre.1.22102.15": {
         "runtime": {
-          "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+          "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.10215"
           }
@@ -178,7 +190,7 @@
           "Microsoft.Extensions.Primitives": "6.0.2-mauipre.1.22102.15"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
+          "lib/net6.0/Microsoft.Extensions.FileProviders.Abstractions.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.10215"
           }
@@ -191,7 +203,7 @@
           "Microsoft.Extensions.Primitives": "6.0.2-mauipre.1.22102.15"
         },
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileProviders.Physical.dll": {
+          "lib/net6.0/Microsoft.Extensions.FileProviders.Physical.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.10215"
           }
@@ -199,7 +211,7 @@
       },
       "Microsoft.Extensions.FileSystemGlobbing/6.0.2-mauipre.1.22102.15": {
         "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
+          "lib/net6.0/Microsoft.Extensions.FileSystemGlobbing.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.10215"
           }
@@ -210,7 +222,7 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.2-mauipre.1.22102.15"
         },
         "runtime": {
-          "lib/netcoreapp3.1/Microsoft.Extensions.Primitives.dll": {
+          "lib/net6.0/Microsoft.Extensions.Primitives.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.10215"
           }
@@ -244,10 +256,17 @@
           }
         }
       },
-      "System.Reactive/5.0.0": {},
+      "System.Reactive/5.0.0": {
+        "runtime": {
+          "lib/net5.0/System.Reactive.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.0.0.1"
+          }
+        }
+      },
       "System.Runtime.CompilerServices.Unsafe/6.0.2-mauipre.1.22102.15": {
         "runtime": {
-          "lib/netcoreapp3.1/System.Runtime.CompilerServices.Unsafe.dll": {
+          "lib/net6.0/System.Runtime.CompilerServices.Unsafe.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.10215"
           }
@@ -258,7 +277,15 @@
           "System.Runtime.CompilerServices.Unsafe": "6.0.2-mauipre.1.22102.15"
         },
         "runtime": {
-          "lib/netcoreapp3.1/System.Text.Encodings.Web.dll": {
+          "lib/net6.0/System.Text.Encodings.Web.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.222.10215"
+          }
+        },
+        "runtimeTargets": {
+          "runtimes/browser/lib/net6.0/System.Text.Encodings.Web.dll": {
+            "rid": "browser",
+            "assetType": "runtime",
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.10215"
           }
@@ -270,21 +297,13 @@
           "System.Text.Encodings.Web": "6.0.2-mauipre.1.22102.15"
         },
         "runtime": {
-          "lib/netcoreapp3.1/System.Text.Json.dll": {
+          "lib/net6.0/System.Text.Json.dll": {
             "assemblyVersion": "6.0.0.0",
             "fileVersion": "6.0.222.10215"
           }
         }
       },
-      "System.ValueTuple/4.5.0": {},
-      "System.Reactive.Reference/5.0.0.0": {
-        "runtime": {
-          "System.Reactive.dll": {
-            "assemblyVersion": "5.0.0.0",
-            "fileVersion": "5.0.0.1"
-          }
-        }
-      }
+      "System.ValueTuple/4.5.0": {}
     }
   },
   "libraries": {
@@ -341,6 +360,13 @@
       "sha512": "sha512-/7+oQGfH4cNJUXcEQMpm8+3Rir9RlvLu4SiF68Yh2MJGlmRZZdvvHAirU3VfexsOOIK47bM8mJzAdPxVDw5LKQ==",
       "path": "discord.net.websocket/3.7.1",
       "hashPath": "discord.net.websocket.3.7.1.nupkg.sha512"
+    },
+    "HtmlAgilityPack/1.11.43": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-C2gpt+S2tdFlQMOC3DK7rHZ8iv6EpDuIo4v0UTUSGX1F1bZ+NAQ3gp77HK8/JfCDszUm3Y2rHoyTp/TpO4KOIA==",
+      "path": "htmlagilitypack/1.11.43",
+      "hashPath": "htmlagilitypack.1.11.43.nupkg.sha512"
     },
     "Microsoft.Extensions.Configuration/6.0.2-mauipre.1.22102.15": {
       "type": "package",
@@ -474,11 +500,6 @@
       "sha512": "sha512-okurQJO6NRE/apDIP23ajJ0hpiNmJ+f0BwOlB/cSqTLQlw5upkf+5+96+iG2Jw40G1fCVCyPz/FhIABUjMR+RQ==",
       "path": "system.valuetuple/4.5.0",
       "hashPath": "system.valuetuple.4.5.0.nupkg.sha512"
-    },
-    "System.Reactive.Reference/5.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
     }
   }
 }
