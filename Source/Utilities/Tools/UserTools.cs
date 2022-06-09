@@ -124,6 +124,11 @@ namespace PenileNET.Utilities {
                 embed.Description += $"**Joined at** `{user.JoinedAt.Value.ToString("MMM d, yyyy")}`\n";
             }
 
+            var flags = user.PublicFlags;
+            if (flags != null) {
+                embed.Description += $"**Flag** `{FormatFlag(flags.Value)}`\n";
+            }
+
             embed.Description += $"\n{FormatActivity(user.Activities.First())}";
 
             var roles = GeneralTools.GetSorted(user.Roles.ToList());
@@ -136,23 +141,14 @@ namespace PenileNET.Utilities {
                     }
                 );
             }
-
-            if (user.PublicFlags != null) {
-                embed.AddField(
-                    new EmbedFieldBuilder {
-                        IsInline = true,
-                        Name = "Public Flag",
-                        Value = $"`{FormatFlag(user.PublicFlags.Value)}`"
-                    }
-                );
-            }
-
-            if (user.VoiceChannel != null) {
+            
+            var channel = user.VoiceChannel;
+            if (channel != null) {
                 embed.AddField(
                     new EmbedFieldBuilder {
                         IsInline = true,
                         Name = "Voice Channel",
-                        Value = FormatVoiceChannel(user.VoiceChannel)
+                        Value = FormatVoiceChannel(channel)
                     }
                 );
             }

@@ -29,17 +29,23 @@ namespace PenileNET.Utilities {
                     new EmbedFieldBuilder {
                         Name = $"Users [{guild.Users.Count}]",
                         Value = FormatUsers(guild.Users)
-                    },
-                    new EmbedFieldBuilder {
-                        IsInline = true,
-                        Name = $"Premium [{guild.PremiumSubscriptionCount}]",
-                        Value = $"**Tier** `{guild.PremiumTier}`\n"
                     }
                 }
             };
 
             if (guild.Events.Count > 0) {
                 embed.Description += FormatEvent(guild.Events.First());
+            }
+
+            var premiumCount = guild.PremiumSubscriptionCount;
+            if (premiumCount > 0) {
+                embed.AddField(
+                    new EmbedFieldBuilder {
+                        IsInline = true,
+                        Name = $"Premium [{premiumCount}]",
+                        Value = $"**Tier** `{guild.PremiumTier}`\n"
+                    }
+                );
             }
 
             return embed;
