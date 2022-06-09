@@ -103,7 +103,6 @@ namespace PenileNET.Utilities {
             return embed;
         }
 
-
         public static EmbedBuilder AllProfileEmbed(SocketGuildUser user) {
             var embed = new EmbedBuilder {
                 Color = GetStatusColor(user),
@@ -118,18 +117,22 @@ namespace PenileNET.Utilities {
                 embed.Description += $"**Nickname** {user.Mention}\n";
             }
 
-            embed.Description += $"**Created at** `{user.CreatedAt.ToString("MMM d, yyyy")}`\n";
-
-            if (user.JoinedAt != null) {
-                embed.Description += $"**Joined at** `{user.JoinedAt.Value.ToString("MMM d, yyyy")}`\n";
-            }
-
             var flags = user.PublicFlags;
             if (flags != null) {
                 embed.Description += $"**Flag** `{FormatFlag(flags.Value)}`\n";
             }
+            
+            var activity = user.Activities.First();
+            if (activity != null) {
+                embed.Description += $"\n{FormatActivity(activity)}\n\n";
+            }
 
-            embed.Description += $"\n{FormatActivity(user.Activities.First())}";
+            embed.Description += $"**Created at** `{user.CreatedAt.ToString("MMM d, yyyy")}`\n";
+
+            var joinedAt = user.JoinedAt;
+            if (joinedAt != null) {
+                embed.Description += $"**Joined at** `{joinedAt.Value.ToString("MMM d, yyyy")}`\n";
+            }           
 
             var roles = GeneralTools.GetSorted(user.Roles.ToList());
             if (roles.Count > 0) {

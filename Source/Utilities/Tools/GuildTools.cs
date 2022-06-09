@@ -1,4 +1,3 @@
-using System.Reflection.Metadata.Ecma335;
 using Discord;
 using Discord.WebSocket;
 using PenileNET.Utilities.Constants;
@@ -13,8 +12,7 @@ namespace PenileNET.Utilities {
                 },
                 Title = guild.Name,
                 ThumbnailUrl = guild.IconUrl,
-                Description = $"**Owner** {guild.Owner.Mention}\n"
-                    + $"**Created at** `{guild.CreatedAt.ToString("MMM d, yyyy")}`\n",
+                Description = $"**Owner** {guild.Owner.Mention}\n",
                 ImageUrl = guild.BannerUrl,
                 Fields = {
                     new EmbedFieldBuilder {
@@ -40,6 +38,8 @@ namespace PenileNET.Utilities {
                     embed.Description += FormatEvent(activeEvent);
                 }
             }
+
+            embed.Description += $"\n**Created at** `{guild.CreatedAt.ToString("MMM d, yyyy")}`";
 
             var premiumCount = guild.PremiumSubscriptionCount;
             if (premiumCount > 0) {
@@ -123,7 +123,7 @@ namespace PenileNET.Utilities {
             }
 
             str += "]**\n"
-                + $">>> **{guildEvent.Name}** ";
+                + $"> **{guildEvent.Name}** ";
 
             if (guildEvent.UserCount != null) {
                 str += $"[{guildEvent.UserCount}] ";
@@ -140,9 +140,7 @@ namespace PenileNET.Utilities {
 
             var description = guildEvent.Description;
             if (!string.IsNullOrWhiteSpace(description)) {
-                str += $"`{description}`\n";
-            } else {
-                str += '\n';
+                str += $"> ```{description}```";
             }
 
             str += $"at **{guildEvent.StartTime.ToString("h:mm tt, MMM d")}**";

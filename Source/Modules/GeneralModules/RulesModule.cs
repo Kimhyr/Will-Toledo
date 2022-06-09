@@ -11,7 +11,7 @@ namespace PenileNET.Modules {
             await RespondAsync(
                 embed: new EmbedBuilder {
                     Color = Colors.Blurple,
-                    Title = "Rules",
+                    Description = "*rules as of **Jun 9, 2022***",
                     Fields = {
                         new EmbedFieldBuilder {
                             Name = "Discord ToS",
@@ -54,7 +54,7 @@ namespace PenileNET.Modules {
                         new EmbedFieldBuilder {
                             Name = "Channels",
                             Value =
-                                "> If you use any channel **improperly**, this will result in a **warning** or **kick**."
+                                "> Using any channel **improperly** will result in a **warning** or **kick**."
                         }
                     }
                 }.Build()
