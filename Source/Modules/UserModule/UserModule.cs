@@ -1,17 +1,13 @@
 using Discord;
 using Discord.Interactions;
-using PenileNET.Services;
+using PenileNET.Utilities;
 using PenileNET.Utilities.Constants;
 
-namespace PenileNET.Modules {
+namespace PenileNET.Modules
+{
     [Group("user", "Commands for getting and manipulating users.")]
     public class UserModule : InteractionModuleBase<SocketInteractionContext> {
         public InteractionService? Commands { get; set; }
-        private InteractionHandler _handler;
-
-        public UserModule(InteractionHandler handler) {
-            _handler = handler;
-        }
 
         [SlashCommand("profile", "Displays the user's profile.")]
         public async Task Profile(
