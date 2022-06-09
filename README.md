@@ -30,7 +30,7 @@ A general purpose Discord bot using Discord.Net.
 ## Installation
 
 1. Clone the repository.
-2. In the `Source/config.json`, change `TEST_GUILD_ID` to a test server and change `TOKEN` to your Discord bot's token.
+2. In the `Source/config.json`, change `TEST_GUILD_ID` to a test server's ID and change `TOKEN` to your Discord bot's token.
 
 ## Note
 
