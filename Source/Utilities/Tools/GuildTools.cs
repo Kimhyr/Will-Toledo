@@ -1,3 +1,4 @@
+using System.Reflection.Metadata.Ecma335;
 using Discord;
 using Discord.WebSocket;
 using PenileNET.Utilities.Constants;
@@ -32,9 +33,12 @@ namespace PenileNET.Utilities {
                     }
                 }
             };
-
+            
             if (guild.Events.Count > 0) {
-                embed.Description += FormatEvent(guild.Events.First());
+                var activeEvent = GetActiveEvent(guild.Events);
+                if (activeEvent != null) {
+                    embed.Description += FormatEvent(activeEvent);
+                }
             }
 
             var premiumCount = guild.PremiumSubscriptionCount;
@@ -49,6 +53,19 @@ namespace PenileNET.Utilities {
             }
 
             return embed;
+        }
+
+        public static SocketGuildEvent? GetActiveEvent(IReadOnlyCollection<SocketGuildEvent> events) {
+            foreach (var guildEvent in events) {
+                switch (guildEvent.Status) {
+                case GuildScheduledEventStatus.Active: return guildEvent;
+                case GuildScheduledEventStatus.Scheduled: return guildEvent;
+                case GuildScheduledEventStatus.Cancelled: return guildEvent;
+                default: return guildEvent;
+                }
+            }
+
+            return null;
         }
 
         public static string FormatChannels(SocketGuild guild) {
