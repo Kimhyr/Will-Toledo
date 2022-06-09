@@ -37,5 +37,4 @@ D:\Projects\Personal\PenileNET\obj\Debug\net6.0\refint\PenileNET.dll
 D:\Projects\Personal\PenileNET\obj\Debug\net6.0\PenileNET.pdb
 D:\Projects\Personal\PenileNET\obj\Debug\net6.0\PenileNET.genruntimeconfig.cache
 D:\Projects\Personal\PenileNET\obj\Debug\net6.0\ref\PenileNET.dll
-D:\Projects\Personal\PenileNET\bin\Debug\net6.0\HtmlAgilityPack.dll
 D:\Projects\Personal\PenileNET\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

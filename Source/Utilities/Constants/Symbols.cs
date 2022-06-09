@@ -4,5 +4,6 @@
         public static readonly string LeftArrow = "←";
         public static readonly string UpArrow = "↑";
         public static readonly string DownArrow = "↓";
+        public static readonly string EmDash = "—";
     }
 }
