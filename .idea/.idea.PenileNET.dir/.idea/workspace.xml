@@ -20,22 +20,30 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e1115cd5-cf96-4cb3-a643-b03356e071d4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Source/Modules/StocksModule/StocksModule.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Source/Modules/StocksModule/StocksUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Assets/Images/GuildEmbed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Assets/Images/UserEmbed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Assets/Rules.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modals/EmbedModal.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modules/GeneralModules/EmbedModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modules/GeneralModules/RulesModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modules/GeneralModules/TestingModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modules/InformationModules/GuildModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Modules/InformationModules/UserModule.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Utilities/Tools/EmbedTools.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Utilities/Tools/GeneralTools.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Utilities/Tools/GuildTools.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Source/Utilities/Tools/UserTools.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PenileNET.dir/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenileNET.dir/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PenileNET.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PenileNET.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Modules/WebModule/WebModule.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/Modules/WebModule/WebUtility.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Source/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/Services/InteractionHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/Services/InteractionHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/bin/Debug/net6.0/PenileNET.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/ref/PenileNET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/ref/PenileNET.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/refint/PenileNET.dll" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/refint/PenileNET.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/Debug/net6.0/PenileNET.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/PenileNET.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/PenileNET.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/PenileNET.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/obj/PenileNET.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/PenileNET.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/obj/PenileNET.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/obj/project.packagespec.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +54,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Source/Modules/StocksModule/StocksUtility.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Modules/StocksModule/StocksModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Utilities/Constants/Colors.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Utilities/Tools/UserTools.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Utilities/Tools/GeneralTools.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Services/InteractionHandler.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5956701C-92EC-47BC-9814-5555CD08EAFC/482/List.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Utilities/Constants/Colors.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Modules/TestingModule.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Modules/UserModule/UserModule.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Modules/UserModule/UserUtility.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Source/Utilities/Constants/Symbols.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Source/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Modules/GeneralModules/RulesModule.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Source/Modules/InformationModules/UserModule.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -67,6 +74,7 @@
         <option value="$PROJECT_DIR$/Source/Modules/StocksModule/StocksModule.cs" />
         <option value="$PROJECT_DIR$/Source/Services/InteractionHandler.cs" />
         <option value="$PROJECT_DIR$/Source/Modules/UserModule/UserModule.cs" />
+        <option value="$PROJECT_DIR$/Source/Program.cs" />
       </list>
     </option>
   </component>
@@ -81,7 +89,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager">
     <configuration name="PenileNET" type="DotNetProject" factoryName=".NET Project">
@@ -120,6 +128,7 @@
       <workItem from="1654391646466" duration="136000" />
       <workItem from="1654565937134" duration="104000" />
       <workItem from="1654569112429" duration="332000" />
+      <workItem from="1654809074748" duration="649000" />
     </task>
     <servers />
   </component>
@@ -142,6 +151,10 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="707" y="385" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1" timestamp="1654809200280">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="707" y="385" key="ANALYSIS_DLG_com.jetbrains.rider.actions.impl.cleanup.RiderCodeCleanupAction$actionPerformed$dlg$1/0.0.1920.1080@0.0.1920.1080" timestamp="1654809200280" />
     <state width="1877" height="295" key="GridCell.Tab.0.bottom" timestamp="1654569449005">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
@@ -158,6 +171,10 @@
       <screen x="0" y="0" width="1920" height="1080" />
     </state>
     <state width="1877" height="295" key="GridCell.Tab.0.right/0.0.1920.1080@0.0.1920.1080" timestamp="1654569449005" />
+    <state x="842" y="178" key="SettingsEditor" timestamp="1654809718717">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="842" y="178" key="SettingsEditor/0.0.1920.1080@0.0.1920.1080" timestamp="1654809718717" />
     <state x="623" y="235" width="672" height="678" key="search.everywhere.popup" timestamp="1654566014322">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

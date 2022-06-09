@@ -5,17 +5,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using PenileNET.Services;
 
-namespace PenileNET
-{
-    public class Program
-    {
+namespace PenileNET {
+    public class Program {
         private readonly IConfiguration _config;
         private readonly ulong _testGuildId;
         private DiscordSocketClient? _client;
         private InteractionService? _interactions;
 
-        private Program()
-        {
+        private Program() {
             _config = new ConfigurationBuilder()
                 .SetBasePath(AppContext.BaseDirectory)
                 .AddJsonFile("config.json")
@@ -23,19 +20,16 @@ namespace PenileNET
             _testGuildId = ulong.Parse(_config["TEST_GUILD_ID"]);
         }
 
-        public static Task Main(string[] args)
-        {
+        public static Task Main(string[] args) {
             return new Program().MainAsync();
         }
 
-        public async Task MainAsync()
-        {
+        public async Task MainAsync() {
             var services = new ServiceCollection()
                 .AddSingleton(_config)
                 .AddSingleton(x =>
                     new DiscordSocketClient(
-                        new DiscordSocketConfig
-                        {
+                        new DiscordSocketConfig {
                             GatewayIntents = GatewayIntents.All,
                             LogGatewayIntentWarnings = false,
                             AlwaysDownloadUsers = true,
@@ -64,44 +58,36 @@ namespace PenileNET
             await Task.Delay(Timeout.Infinite);
         }
 
-        private Task LogAsync(LogMessage log)
-        {
+        private Task LogAsync(LogMessage log) {
             Console.WriteLine(log.ToString());
 
             return Task.CompletedTask;
         }
 
-        private async Task ReadyAsync()
-        {
-            if (_interactions != null)
-            {
-                if (IsDebug())
-                {
+        private async Task ReadyAsync() {
+            if (_interactions != null) {
+                if (IsDebug()) {
                     Console.WriteLine($"[DEBUG] Registering commands to '{_testGuildId}'...");
 
                     await _interactions.RegisterCommandsToGuildAsync(_testGuildId);
-                }
-                else
-                {
+                } else {
                     Console.WriteLine("Registering commands globally...");
 
                     await _interactions.RegisterCommandsGloballyAsync();
                 }
             }
 
-            if (_client != null)
-            {
+            if (_client != null) {
                 Console.WriteLine($"Connected as '{_client.CurrentUser}'.");
             }
         }
 
-        private static bool IsDebug()
-        {
-#if DEBUG
+        private static bool IsDebug() {
+        #if DEBUG
             return true;
-#else
+        #else
             return false;
-#endif
+        #endif
         }
     }
 }

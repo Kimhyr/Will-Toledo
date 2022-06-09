@@ -18,16 +18,26 @@
       <e p="PenileNET.csproj" t="IncludeRecursive" />
       <e p="README.md" t="Include" />
       <e p="Source" t="Include">
-        <e p="config.json" t="Include" />
-        <e p="Modules" t="Include">
-          <e p="StocksModule" t="Include">
-            <e p="StocksModule.cs" t="Include" />
-            <e p="StocksUtility.cs" t="Include" />
+        <e p="Assets" t="Include">
+          <e p="Images" t="Include">
+            <e p="GuildEmbed.png" t="Include" />
+            <e p="UserEmbed.png" t="Include" />
           </e>
-          <e p="TestingModule.cs" t="Include" />
-          <e p="UserModule" t="Include">
+          <e p="Rules.md" t="Include" />
+        </e>
+        <e p="config.json" t="Include" />
+        <e p="Modals" t="Include">
+          <e p="EmbedModal.cs" t="Include" />
+        </e>
+        <e p="Modules" t="Include">
+          <e p="GeneralModules" t="Include">
+            <e p="EmbedModule.cs" t="Include" />
+            <e p="RulesModule.cs" t="Include" />
+            <e p="TestingModule.cs" t="Include" />
+          </e>
+          <e p="InformationModules" t="Include">
+            <e p="GuildModule.cs" t="Include" />
             <e p="UserModule.cs" t="Include" />
-            <e p="UserUtility.cs" t="Include" />
           </e>
         </e>
         <e p="Program.cs" t="Include" />
@@ -38,6 +48,12 @@
           <e p="Constants" t="Include">
             <e p="Colors.cs" t="Include" />
             <e p="Symbols.cs" t="Include" />
+          </e>
+          <e p="Tools" t="Include">
+            <e p="EmbedTools.cs" t="Include" />
+            <e p="GeneralTools.cs" t="Include" />
+            <e p="GuildTools.cs" t="Include" />
+            <e p="UserTools.cs" t="Include" />
           </e>
         </e>
       </e>
