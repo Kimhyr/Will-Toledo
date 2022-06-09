@@ -3,10 +3,8 @@ using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
 
-namespace PenileNET.Services
-{
-    public class InteractionHandler
-    {
+namespace PenileNET.Services {
+    public class InteractionHandler {
         private readonly DiscordSocketClient _client;
         private readonly InteractionService _commands;
         private readonly IServiceProvider _services;
@@ -15,15 +13,13 @@ namespace PenileNET.Services
             DiscordSocketClient client,
             InteractionService commands,
             IServiceProvider services
-        )
-        {
+        ) {
             _client = client;
             _commands = commands;
             _services = services;
         }
 
-        public async Task InitializeAsync()
-        {
+        public async Task InitializeAsync() {
             await _commands.AddModulesAsync(Assembly.GetEntryAssembly(), _services);
 
             _client.InteractionCreated += HandleInteraction;
@@ -33,33 +29,27 @@ namespace PenileNET.Services
             _commands.ComponentCommandExecuted += ComponentCommandExecuted;
         }
 
-        private async Task HandleInteraction(SocketInteraction arg)
-        {
-            try
-            {
+        private async Task HandleInteraction(SocketInteraction arg) {
+            try {
                 var context = new SocketInteractionContext(_client, arg);
 
                 await _commands.ExecuteCommandAsync(context, _services);
-            }
-            catch (Exception ex)
-            {
+            } catch (Exception ex) {
                 Console.WriteLine(ex);
 
-                if (arg.Type == InteractionType.ApplicationCommand)
-                {
+                if (arg.Type == InteractionType.ApplicationCommand) {
                     await arg.GetOriginalResponseAsync()
                         .ContinueWith(async msg =>
                             await msg.Result.DeleteAsync());
                 }
             }
         }
-
+        
         private Task ComponentCommandExecuted(
             ComponentCommandInfo info,
             IInteractionContext context,
             IResult result
-        )
-        {
+        ) {
             return Task.CompletedTask;
         }
 
@@ -67,8 +57,7 @@ namespace PenileNET.Services
             ContextCommandInfo info,
             IInteractionContext context,
             IResult result
-        )
-        {
+        ) {
             return Task.CompletedTask;
         }
 
@@ -76,8 +65,7 @@ namespace PenileNET.Services
             SlashCommandInfo info,
             IInteractionContext context,
             IResult result
-        )
-        {
+        ) {
             return Task.CompletedTask;
         }
     }

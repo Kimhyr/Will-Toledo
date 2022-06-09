@@ -3,8 +3,7 @@ using Discord.Interactions;
 using PenileNET.Utilities;
 using PenileNET.Utilities.Constants;
 
-namespace PenileNET.Modules
-{
+namespace PenileNET.Modules {
     [Group("user", "Commands for getting and manipulating users.")]
     public class UserModule : InteractionModuleBase<SocketInteractionContext> {
         public InteractionService? Commands { get; set; }
