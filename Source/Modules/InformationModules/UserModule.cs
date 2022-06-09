@@ -55,7 +55,7 @@ namespace PenileNET.Modules {
             if (role == null) {
                 embed.AddField(
                     new EmbedFieldBuilder {
-                        Name = $"Roles ({roles.Count})",
+                        Name = $"Roles [{roles.Count}]",
                         Value = UserTools.FormatRoles(roles)
                     }
                 );

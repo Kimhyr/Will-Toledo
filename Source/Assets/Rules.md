@@ -20,7 +20,7 @@
 > **Purposefully** being annoying (*e.g. spamming, being loud, acting dumb, begging*) will result in a **warning** or **kick**."
 
 #### **Private Information**
-> Exposing someone's private information **un-consensually** will result in a **ban**; If you expose your own or someone's private information (**consensually**), it must be nothing severe (*i.e. exact location, card info, social security number*)."
+> Exposing someone's private information **un-consensually** will result in a **ban**; If you expose your own or someone's private information **consensually**, it must be nothing severe (*i.e. exact location, card info, social security number*)."
 
 
 #### **Channels**

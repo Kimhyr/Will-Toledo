@@ -206,7 +206,9 @@ namespace PenileNET.Utilities {
         public static string FormatRoles(IReadOnlyCollection<SocketRole> roles) {
             var str = "";
             foreach (var role in roles) {
-                str += $"{role.Mention} ";
+                if (!role.IsEveryone) {
+                    str += $"{role.Mention} ";
+                }
             }
 
             return str;
