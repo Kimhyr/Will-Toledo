@@ -13,5 +13,9 @@ A general purpose Discord bot using Discord.Net.
 - [x] Manipulating users
 - [x] Embed creation
 - [ ] Getting guild information
-- [ ] Manipulating guilds
+- [ ] Manipulating and creating guilds
 - [ ] Component creation
+- [ ] Scam detection
+- [ ] Logging
+- [ ] Message filterer
+- [ ] Music
