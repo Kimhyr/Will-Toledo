@@ -1,18 +1,14 @@
-# Penile.NET
+# [Penile.NET](https://github.com/kimhyr/Penile.NET)
 
-A general purpose Discord bot using Discord.Net.
+A general purpose Discord bot using [Discord.Net](https://discordnet.dev/index.html).
 
-## Requirements
+## Warning
 
-#### Nuget Packages
+I just wanted to put some text here because it is visually pleasing when there is a smaller text above some larger text that then lists items. Also, it is because I have a compulsive urge to do so.
 
-- [Discord.Net](https://www.nuget.org/packages/Discord.Net/) (3.7.1)
-- [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) (6.0.2-mauipre.1.22102.15)
-- [Microsoft.Extensions.Configuration.Json](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/) (6.0.2-mauipre.1.22102.15)
-- [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) (6.0.2-mauipre.1.22102.15)
-
-#### Other
-- Some sort of cognition.
+#### [Penile.NET](https://github.com/kimhyr/Penile.NET) is:
+1. Severely unfinished.
+2. Created by a very lazy, immature, 15-year-old, pubescent, teen who is fairly new to programming.
 
 ## Features
 
@@ -27,12 +23,33 @@ A general purpose Discord bot using Discord.Net.
 - [ ] Message filterer
 - [ ] Music
 
+## Future Changes
+
+- [ ] For embeds, check if any text is overloaded; If it is, reduce the text until the embed is satisfied.
+- [ ] Review and optimize everything; Then, clean-up code.
+
+## Requirements
+
+Again, I just wanted to put some text here because it is visually pleasing when there is a smaller text above some larger text that then lists items. Also, it is because I have a compulsive urge to do so.
+
+#### Nuget Packages
+
+- [Discord.Net](https://www.nuget.org/packages/Discord.Net/) (3.7.1)
+- [Microsoft.Extensions.Configuration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration/) (6.0.2-mauipre.1.22102.15)
+- [Microsoft.Extensions.Configuration.Json](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.Json/) (6.0.2-mauipre.1.22102.15)
+- [Microsoft.Extensions.DependencyInjection](https://www.nuget.org/packages/Microsoft.Extensions.DependencyInjection/) (6.0.2-mauipre.1.22102.15)
+
+#### Other
+- Some sort of cognition.
+
 ## Installation
 
+1. Create a Discord bot and make sure all intents are enabled.
 1. Clone the repository.
-2. In the `Source/config.json`, change `TEST_GUILD_ID` to a test server and change `TOKEN` to your Discord bot's token.
+2. In the `Source/config.json`, change `TEST_GUILD_ID` to a test server's ID and change `TOKEN` to your Discord bot's token.
 
 ## Note
 
 Contact me on Discord (i.e. [@Emhyr#0560](https://discord.com/channels/@me/982086180449431553), [@dogman#0113](https://discord.com/channels/@me/982086180449431553)) or Twitter (i.e. [@kingemhyr](https://twitter.com/kingemhyr)) for additional information.
-I also greatly appreciate constructive criticism.
+
+Also, I greatly appreciate constructive criticism .
