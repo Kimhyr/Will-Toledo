@@ -51,8 +51,8 @@ Unhandled exception. System.IO.FileNotFoundException: The configuration file 'co
    at Microsoft.Extensions.Configuration.FileConfigurationProvider.Load()
    at Microsoft.Extensions.Configuration.ConfigurationRoot..ctor(IList`1 providers)
    at Microsoft.Extensions.Configuration.ConfigurationBuilder.Build()
-   at PenileNET.Program..ctor() in D:\Projects\Personal\PenileNET\Source\Program.cs:line 16
-   at PenileNET.Program.Main(String[] args) in D:\Projects\Personal\PenileNET\Source\Program.cs:line 24
+   at PenileNET.Program..ctor() in ~\PenileNET\Source\Program.cs:line 16
+   at PenileNET.Program.Main(String[] args) in ~\PenileNET\Source\Program.cs:line 24
    at PenileNET.Program.<Main>(String[] args)
 ```
 
