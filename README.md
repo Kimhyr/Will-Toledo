@@ -55,6 +55,7 @@ Unhandled exception. System.IO.FileNotFoundException: The configuration file 'co
    at PenileNET.Program.Main(String[] args) in ~\PenileNET\Source\Program.cs:line 24
    at PenileNET.Program.<Main>(String[] args)
 ```
+1. To build, run `dotnet build`. The executable should be in `bin/Debug/net6.0`
 
 ## Note
 

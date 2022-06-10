@@ -1,4 +1,7 @@
-﻿using Discord;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
 using Microsoft.Extensions.Configuration;
