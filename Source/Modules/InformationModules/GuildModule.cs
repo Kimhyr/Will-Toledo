@@ -1,7 +1,12 @@
+using System.Collections;
+using System.ComponentModel;
+using System.Threading.Channels;
 using Discord;
 using Discord.Interactions;
 using Discord.WebSocket;
+using PenileNET.Modals;
 using PenileNET.Utilities;
+using PenileNET.Utilities.Constants;
 
 namespace PenileNET.Modules {
     [Group("guild", "Commands for getting and manipulating guilds.")]
@@ -72,15 +77,91 @@ namespace PenileNET.Modules {
             );
         }
 
-        [SlashCommand("channels", "Display or create the guild's channels")]
-        public async Task Channels(SocketGuildChannel? channel = null) {
+        [SlashCommand("channels", "If there is no channel given, create a channel; Otherwise, display the channel.")]
+        public async Task Channels(string? name = null) {
             var embed = GuildTools.GuildEmbed(Context.Guild);
-
+            
             var guild = Context.Guild;
+            if (name == null) {
+                embed.AddField(
+                    new EmbedFieldBuilder() {
+                        Name = $"Channels [{guild.Channels.Count}]",
+                        Value = GuildTools.FormatChannels(guild)
+                    }
+                );
+            } else {
+                await RespondWithModalAsync<ChannelModal>("channel_modal");
+            }
+
+            await RespondAsync(
+                embed: embed.Build()
+            );
+        }
+
+        [ModalInteraction("channel_modal")]
+        public async Task EmbedModal(ChannelModal modal) {
+            var guild = Context.Guild;
+
+            var channelId = new ulong();
+            switch (modal.Type) {
+            case "text":
+                var channel = await guild.CreateTextChannelAsync(modal.Name);
+                await channel.ModifyAsync(x =>
+                    x.Topic = modal.Topic
+                );
+
+                if (ulong.TryParse(modal.Category, out var outCategory)) {
+                    await channel.ModifyAsync(x => 
+                        x.CategoryId = outCategory
+                    );
+                }
+                
+                channelId = channel.Id;
+
+                break;
+            case "voice":
+                channel = await guild.CreateTextChannelAsync(modal.Name);
+                await channel.ModifyAsync(x =>
+                    x.Topic = modal.Topic
+                );
+
+                if (ulong.TryParse(modal.Category, out outCategory)) {
+                    await channel.ModifyAsync(x => 
+                        x.CategoryId = outCategory
+                    );
+                }
+
+                channelId = channel.Id;
+
+                break;
+            }
+
+            var embed = GuildTools.GuildEmbed(guild);
             embed.AddField(
                 new EmbedFieldBuilder() {
-                    Name = $"Channels [{guild.Channels.Count}]",
-                    Value = GuildTools.FormatChannels(guild)
+                    Name = "Voice Channel",
+                    Value = $"<#{channelId}>"
+                }
+            );
+
+             await RespondAsync(
+                embed: embed.Build()
+            );
+        }
+
+        [SlashCommand("purge", "Bulk deletes messages.")]
+        public async Task Purge([MaxValue(100)] int limit) {
+            var messages = await Context.Channel.GetMessagesAsync(limit).FlattenAsync();
+            var filteredMessages = messages.Where(x => 
+                (DateTimeOffset.UtcNow - x.Timestamp).TotalDays <= 14
+            );
+            await ((ITextChannel)Context.Channel).DeleteMessagesAsync(filteredMessages);
+            
+            var embed = GuildTools.GuildEmbed(Context.Guild); 
+            embed.AddField(
+                new EmbedFieldBuilder() {
+                    Name = "Purged",
+                    Value = $"**Messages** `{filteredMessages.Count()}`"
                 }
             );
 

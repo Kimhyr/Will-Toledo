@@ -1,3 +1,5 @@
+using System.Reflection.Metadata.Ecma335;
+using System.Runtime.ConstrainedExecution;
 using System.Text.RegularExpressions;
 using Discord;
 using Discord.Interactions;
@@ -20,6 +22,12 @@ namespace PenileNET.Modules {
 
             switch (option) {
             case 0:
+                if (user.Status == UserStatus.Offline || user.Status ==  UserStatus.Invisible) {
+                    await RespondAsync(
+                        embed: UserTools.ProfileEmbed(user).Build()
+                    );
+                }
+
                 var embed = new EmbedBuilder {
                     Color = UserTools.GetStatusColor(user),
                     Author = new EmbedAuthorBuilder {
@@ -61,13 +69,14 @@ namespace PenileNET.Modules {
                     );
                 }
                 
+
                 var channel = user.VoiceChannel;
                 if (channel != null) {
                     embed.AddField(
                         new EmbedFieldBuilder {
                             IsInline = true,
                             Name = "Voice Channel",
-                            Value = UserTools.FormatVoiceChannel(channel)
+                            Value = GuildTools.FormatVoiceChannel(channel)
                         }
                     );
                 }
@@ -105,7 +114,7 @@ namespace PenileNET.Modules {
                         new EmbedFieldBuilder {
                             IsInline = true,
                             Name = "Voice Channel",
-                            Value = UserTools.FormatVoiceChannel(channel)
+                            Value = GuildTools.FormatVoiceChannel(channel)
                         }
                     );
                 }
@@ -144,7 +153,7 @@ namespace PenileNET.Modules {
                         new EmbedFieldBuilder {
                             IsInline = true,
                             Name = "Voice Channel",
-                            Value = UserTools.FormatVoiceChannel(channel)
+                            Value = GuildTools.FormatVoiceChannel(channel)
                         }
                     );
                 }

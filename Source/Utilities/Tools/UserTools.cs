@@ -15,7 +15,7 @@ namespace PenileNET.Utilities {
 
         public static EmbedBuilder ProfileEmbed(SocketGuildUser user) {
             var embed = new EmbedBuilder {
-                Color = Colors.Blurple,
+                Color = GetStatusColor(user),
                 Title = $"{user.Username}#{user.Discriminator}",
                 ThumbnailUrl = user.GetDisplayAvatarUrl()
             };
@@ -36,23 +36,6 @@ namespace PenileNET.Utilities {
             }
 
             return embed;
-        }
-
-        public static string FormatVoiceChannel(SocketVoiceChannel channel) {
-            var limit = channel.UserLimit.ToString();
-            if (channel.UserLimit == null) {
-                limit = "No limit";
-            }
-
-            var region = channel.RTCRegion;
-            if (string.IsNullOrWhiteSpace(region)) {
-                region = "No region";
-            }
-
-            return $"{channel.Mention}\n"
-                + $"> **Limit** `{limit}`\n"
-                + $"> **Bitrate** `{channel.Bitrate}`\n"
-                + $"> **Region** `{region}`";
         }
 
         public static Color GetStatusColor(SocketGuildUser user) {

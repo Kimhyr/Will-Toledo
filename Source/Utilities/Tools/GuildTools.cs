@@ -1,9 +1,19 @@
 using Discord;
+using Discord.Commands;
+using Discord.Interactions;
 using Discord.WebSocket;
 using PenileNET.Utilities.Constants;
 
 namespace PenileNET.Utilities {
     public class GuildTools {
+        public static SocketVoiceChannel CheckVoiceChannel(SocketVoiceChannel voiceChannel, SocketInteractionContext context) {
+            if (voiceChannel == null) {
+                return context.Guild.GetUser(context.User.Id).VoiceChannel;
+            } else {
+                return voiceChannel;
+            }
+        } 
+
         public static EmbedBuilder GuildEmbed(SocketGuild guild) {
             return new EmbedBuilder() {
                 Color = Colors.Blurple,
@@ -26,6 +36,23 @@ namespace PenileNET.Utilities {
             }
 
             return null;
+        }
+
+        public static string FormatVoiceChannel(SocketVoiceChannel channel) {
+            var limit = channel.UserLimit.ToString();
+            if (channel.UserLimit == null) {
+                limit = "No limit";
+            }
+
+            var region = channel.RTCRegion;
+            if (string.IsNullOrWhiteSpace(region)) {
+                region = "No region";
+            }
+
+            return $"{channel.Mention}\n"
+                + $"> **Limit** `{limit}`\n"
+                + $"> **Bitrate** `{channel.Bitrate}`\n"
+                + $"> **Region** `{region}`";
         }
 
         public static string FormatChannels(SocketGuild guild) {

@@ -8,7 +8,7 @@ namespace PenileNET.Modals {
         [ModalTextInput(
             "embedColor_textInput",
             TextInputStyle.Short,
-            "Color must be formatted in 'R G B'"
+            "In the format 'R G B'"
         )]
         public string? Color { get; set; }
 
@@ -34,7 +34,7 @@ namespace PenileNET.Modals {
         [ModalTextInput(
             "embedThumbnail_textInput",
             TextInputStyle.Short,
-            "Thumbnail must be a URL to an image."
+            "URL to an image."
         )]
         public string? Thumbnail { get; set; }
 

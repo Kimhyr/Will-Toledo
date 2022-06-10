@@ -20,14 +20,9 @@ I just wanted to put some text here because it is visually pleasing when there i
 - [ ] Manipulating and creating guilds
 - [ ] Component creation
 - [ ] Scam detection
-- [ ] Logging
+- [ ] Event logger
 - [ ] Message filterer
-- [ ] Music
-
-## Future Changes
-
-- [ ] For embeds, check if any text is overloaded; If it is, reduce the text until the embed is satisfied.
-- [ ] Review and optimize everything; Then, clean-up code.
+- [ ] Audio play
 
 ## Requirements
 
