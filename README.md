@@ -61,4 +61,4 @@ Unhandled exception. System.IO.FileNotFoundException: The configuration file 'co
 
 Contact me on Discord (i.e. [@Emhyr#0560](https://discord.com/channels/@me/982086180449431553), [@dogman#0113](https://discord.com/channels/@me/982086180449431553)) or Twitter (i.e. [@kingemhyr](https://twitter.com/kingemhyr)) for additional information.
 
-Also, I greatly appreciate constructive criticism .
+Also, I greatly appreciate constructive criticism.

@@ -1,5 +1,5 @@
-﻿/.idea
-/.vscode
-/bin
-/obj
-/Source/config.json
+﻿.idea/*
+.vscode/*
+bin/*
+obj/*
+Source/config.json
