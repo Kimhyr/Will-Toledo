@@ -5,54 +5,14 @@ using PenileNET.Utilities.Constants;
 namespace PenileNET.Utilities {
     public class GuildTools {
         public static EmbedBuilder GuildEmbed(SocketGuild guild) {
-            var embed = new EmbedBuilder {
+            return new EmbedBuilder() {
                 Color = Colors.Blurple,
                 Author = new EmbedAuthorBuilder {
                     Name = guild.Id.ToString()
                 },
                 Title = guild.Name,
-                ThumbnailUrl = guild.IconUrl,
-                Description = $"**Owner** {guild.Owner.Mention}\n",
-                ImageUrl = guild.BannerUrl,
-                Fields = {
-                    new EmbedFieldBuilder {
-                        IsInline = true,
-                        Name = $"Channels [{guild.Channels.Count}]",
-                        Value = FormatChannels(guild)
-                    },
-                    new EmbedFieldBuilder {
-                        IsInline = true,
-                        Name = $"Roles [{guild.Roles.Count}]",
-                        Value = FormatRoles(guild.Roles)
-                    },
-                    new EmbedFieldBuilder {
-                        Name = $"Users [{guild.Users.Count}]",
-                        Value = FormatUsers(guild.Users)
-                    }
-                }
+                Description = $"**Owner** {guild.Owner.Mention}\n"
             };
-            
-            if (guild.Events.Count > 0) {
-                var activeEvent = GetActiveEvent(guild.Events);
-                if (activeEvent != null) {
-                    embed.Description += FormatEvent(activeEvent);
-                }
-            }
-
-            embed.Description += $"\n**Created at** `{guild.CreatedAt.ToString("MMM d, yyyy")}`";
-
-            var premiumCount = guild.PremiumSubscriptionCount;
-            if (premiumCount > 0) {
-                embed.AddField(
-                    new EmbedFieldBuilder {
-                        IsInline = true,
-                        Name = $"Premium [{premiumCount}]",
-                        Value = $"**Tier** `{guild.PremiumTier}`\n"
-                    }
-                );
-            }
-
-            return embed;
         }
 
         public static SocketGuildEvent? GetActiveEvent(IReadOnlyCollection<SocketGuildEvent> events) {
@@ -128,7 +88,7 @@ namespace PenileNET.Utilities {
             if (guildEvent.UserCount != null) {
                 str += $"[{guildEvent.UserCount}] ";
             }
-
+            
             str += $"by {guildEvent.Creator.Mention}";
 
             var location = guildEvent.Location;

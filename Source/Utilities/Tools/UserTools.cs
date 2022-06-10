@@ -16,144 +16,23 @@ namespace PenileNET.Utilities {
         public static EmbedBuilder ProfileEmbed(SocketGuildUser user) {
             var embed = new EmbedBuilder {
                 Color = Colors.Blurple,
-                Title = GetTag(user),
+                Title = $"{user.Username}#{user.Discriminator}",
                 ThumbnailUrl = user.GetDisplayAvatarUrl()
             };
-
-            if (user.PublicFlags != null) {
-                embed.Author = new EmbedAuthorBuilder {
-                    Name = FormatFlag(user.PublicFlags.Value)
-                };
-            }
-
-            if (user.Activities.Count > 0) {
-                embed.Description = FormatActivity(user.Activities.First());
-            }
-
-            if (user.VoiceChannel != null) {
-                embed.AddField(
-                    new EmbedFieldBuilder {
-                        Name = "Voice Channel",
-                        Value = FormatVoiceChannel(user.VoiceChannel)
-                    }
-                );
-            }
-
-            return embed;
-        }
-
-        public static EmbedBuilder UserProfileEmbed(SocketGuildUser user) {
-            var embed = new EmbedBuilder {
-                Color = GetStatusColor(user),
-                Title = GetTag(user),
-                ThumbnailUrl = user.GetAvatarUrl(),
-                Fields = {
-                    new EmbedFieldBuilder {
-                        Name = "Created At",
-                        Value = $"`{user.CreatedAt.ToString("MMM d, yyyy")}`"
-                    }
-                }
-            };
-
-            if (user.PublicFlags != null) {
-                embed.Author = new EmbedAuthorBuilder {
-                    Name = FormatFlag(user.PublicFlags.Value)
-                };
-            }
-
-            if (user.Activities.Count > 0) {
-                embed.Description = FormatActivity(user.Activities.First());
-            }
-
-            return embed;
-        }
-
-        public static EmbedBuilder GuildProfileEmbed(SocketGuildUser user) {
-            var embed = new EmbedBuilder {
-                Color = GetStatusColor(user),
-                Author = new EmbedAuthorBuilder {
-                    Name = GeneralTools.GetSorted(user.Roles.ToList()).First().Name
-                },
-                Title = GetDisplayTag(user),
-                ThumbnailUrl = user.GetDisplayAvatarUrl()
-            };
-
-            if (user.Activities.Count > 0) {
-                embed.Description = FormatActivity(user.Activities.First());
-            }
-
-            if (user.VoiceChannel != null) {
-                embed.AddField(
-                    new EmbedFieldBuilder {
-                        Name = "Voice Channel",
-                        Value = FormatVoiceChannel(user.VoiceChannel)
-                    }
-                );
-            }
-
-            if (user.JoinedAt != null) {
-                embed.AddField(
-                    new EmbedFieldBuilder {
-                        Name = "Joined At",
-                        Value = $"`{user.JoinedAt.Value.ToString("MMM d, yyyy")}`"
-                    }
-                );
-            }
-
-            return embed;
-        }
-
-        public static EmbedBuilder AllProfileEmbed(SocketGuildUser user) {
-            var embed = new EmbedBuilder {
-                Color = GetStatusColor(user),
-                Author = new EmbedAuthorBuilder {
-                    Name = user.Id.ToString()
-                },
-                Title = GetTag(user),
-                ThumbnailUrl = user.GetDisplayAvatarUrl()
-            };
-
-            if (user.Nickname != null) {
-                embed.Description += $"**Nickname** {user.Mention}\n";
-            }
 
             var flags = user.PublicFlags;
             if (flags != null) {
-                embed.Description += $"**Flag** `{FormatFlag(flags.Value)}`\n";
-            }
-            
-            var activity = user.Activities.First();
-            if (activity != null) {
-                embed.Description += $"\n{FormatActivity(activity)}\n\n";
+                embed.Author = new EmbedAuthorBuilder() {
+                    Name = FormatFlag(flags.Value)
+                };
+            } else {
+                embed.Author = new EmbedAuthorBuilder() {
+                    Name = user.Id.ToString()
+                };
             }
 
-            embed.Description += $"**Created at** `{user.CreatedAt.ToString("MMM d, yyyy")}`\n";
-
-            var joinedAt = user.JoinedAt;
-            if (joinedAt != null) {
-                embed.Description += $"**Joined at** `{joinedAt.Value.ToString("MMM d, yyyy")}`\n";
-            }           
-
-            var roles = GeneralTools.GetSorted(user.Roles.ToList());
-            if (roles.Count > 0) {
-                embed.AddField(
-                    new EmbedFieldBuilder {
-                        IsInline = true,
-                        Name = $"Roles [{roles.Count}]",
-                        Value = FormatRoles(roles)
-                    }
-                );
-            }
-            
-            var channel = user.VoiceChannel;
-            if (channel != null) {
-                embed.AddField(
-                    new EmbedFieldBuilder {
-                        IsInline = true,
-                        Name = "Voice Channel",
-                        Value = FormatVoiceChannel(channel)
-                    }
-                );
+            if (user.Activities.Count > 0) {
+                embed.Description = FormatActivity(user.Activities.First());
             }
 
             return embed;
@@ -171,9 +50,9 @@ namespace PenileNET.Utilities {
             }
 
             return $"{channel.Mention}\n"
-                + $"**Limit** `{limit}`\n"
-                + $"**Bitrate** `{channel.Bitrate}`\n"
-                + $"**Region** `{region}`";
+                + $"> **Limit** `{limit}`\n"
+                + $"> **Bitrate** `{channel.Bitrate}`\n"
+                + $"> **Region** `{region}`";
         }
 
         public static Color GetStatusColor(SocketGuildUser user) {
@@ -215,14 +94,6 @@ namespace PenileNET.Utilities {
             }
 
             return str;
-        }
-
-        public static string GetTag(SocketGuildUser user) {
-            return $"{user.Username}#{user.Discriminator}";
-        }
-
-        public static string GetDisplayTag(SocketGuildUser user) {
-            return $"{user.DisplayName}#{user.Discriminator}";
         }
 
         public static string FormatActivity(IActivity activity) {
