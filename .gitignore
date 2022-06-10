@@ -1,4 +1,6 @@
 ﻿/.idea
 /.vscode
+/bin
+/obj
 /Source/Assets
 /Source/config.json
