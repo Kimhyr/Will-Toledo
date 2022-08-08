@@ -2,7 +2,7 @@ I gave up on this shit. #wap
 
 # [Penile.NET](https://github.com/kimhyr/Penile.NET)
 
-A general purpose Discord bot using [Discord.Net](https://discordnet.dev/index.html).
+A general purpose Discord bot using [Discord.NET](https://discordnet.dev/index.html).
 
 ## Warning
 
