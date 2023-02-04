@@ -1,4 +1,4 @@
-I gave up on this shit. #wap
+I gave up on #wap
 
 # [Penile.NET](https://github.com/kimhyr/Penile.NET)
 
