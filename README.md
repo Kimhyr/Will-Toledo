@@ -1,14 +1,12 @@
 I gave up on #wap
 
-# [Penile.NET](https://github.com/kimhyr/Penile.NET)
-
 A general purpose Discord bot using [Discord.NET](https://discordnet.dev/index.html).
 
 ## Warning
 
 I just wanted to put some text here because it is visually pleasing when there is a smaller text above some larger text that then lists items. Also, it is because I have a compulsive urge to do so.
 
-#### [Penile.NET](https://github.com/kimhyr/Penile.NET) is:
+###
 1. Severely unfinished.
 2. Created by a very lazy, immature, 15-year-old, pubescent, teen who is fairly new to programming.
 3. Personally tailored. There may be some features (*e.g. the `rules` command*) that are directly tailored towards my personal preference.
